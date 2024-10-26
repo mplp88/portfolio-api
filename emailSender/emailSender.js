@@ -31,10 +31,10 @@ router.post('/', (req, res) => {
     }
     responses.push(info.response)
 
-    mailOptions.from = email
+    mailOptions.from = `${name} <${email}>`
     mailOptions.to = process.env.GMAIL_USERNAME
     mailOptions.name = name
-    mailOptions.text = message
+    mailOptions.text = message + '.'
     mailOptions.subject = `Nuevo contacto de ${name}`
     mailOptions.replyTo = email
 
