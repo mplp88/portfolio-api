@@ -31,10 +31,12 @@ router.post('/', (req, res) => {
     }
     responses.push(info.response)
 
+    mailOptions.from = email
     mailOptions.to = process.env.GMAIL_USERNAME
-    mailOptions.name = 'Portfolio'
+    mailOptions.name = name
     mailOptions.text = message
     mailOptions.subject = `Nuevo contacto de ${name}`
+    mailOptions.replyTo = email
 
     transporter.sendMail(mailOptions, function (error, info) {
       if (error) {
