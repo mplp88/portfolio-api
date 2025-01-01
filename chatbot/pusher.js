@@ -19,7 +19,6 @@ const pusher = new Pusher({
 
 const init = (chatId) => {
   try {
-    console.log('init')
     pusher.trigger('ponbot', 'init', {
       chatId,
       message: {
