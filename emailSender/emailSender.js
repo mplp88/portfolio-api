@@ -4,7 +4,7 @@ const router = express.Router()
 
 router.post('/', (req, res) => {
   const responses = []
-  const { name, email, message } = req.body
+  const { name, email, subject, message } = req.body
 
   const transporter = nodemailer.createTransport({
     service: 'gmail',
@@ -35,7 +35,7 @@ router.post('/', (req, res) => {
     mailOptions.to = process.env.GMAIL_USERNAME
     mailOptions.name = name
     mailOptions.text = message + '.'
-    mailOptions.subject = `Nuevo contacto de ${name}`
+    mailOptions.subject = subject ?? `Nuevo contacto de ${name}`
     mailOptions.replyTo = email
 
     transporter.sendMail(mailOptions, function (error, info) {
