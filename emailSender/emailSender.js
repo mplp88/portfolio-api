@@ -15,7 +15,7 @@ router.post('/', (req, res) => {
   })
 
   const mailOptions = {
-    from: `Martín Ponce <martin@martinponce.com.ar>`,
+    from: `Martín Ponce <${process.env.GMAIL_USERNAME}>`,
     to: `${name} <${email}>`,
     subject: 'Gracias por tu contacto',
     text: `¡Hola ${name}! Gracias por dejar tu mensaje. Me pondré en contacto a la brevedad. Martín`
