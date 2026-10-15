@@ -1,18 +1,18 @@
 const profile = {
   name: 'Martín Ponce',
   title: 'Senior Full Stack Software Developer',
+  age: 37,
 
   professionalSummary: {
     yearsOfExperience: 10,
-    description: 'Aproximadamente 10 años de experiencia en desarrollo de software.'
-  },
-
-  summary: `
+    description: 'Aproximadamente 10 años de experiencia en desarrollo de software.',
+    summary: `
     Desarrollador de software con experiencia en desarrollo backend,
     frontend e integración de APIs y microservicios.
     Ha trabajado con aplicaciones empresariales, bases de datos
     relacionales y NoSQL, y tecnologías web modernas.
-  `,
+  `
+  },
 
   technologies: {
     backend: ['.NET', 'C#', 'Node.js', 'NestJS', 'JavaScript', 'TypeScript'],
@@ -112,6 +112,23 @@ const profile = {
     contactPage: 'https://portfolio.martinponce.com.ar/#/contact',
     linkedin: 'https://www.linkedin.com/in/mplp88/',
     github: 'https://github.com/mplp88'
+  },
+
+  education: {
+    title: 'Técnico Superior en Desarrollo de Software',
+    institution: 'Instituto Superior Tecnológico Empresarial Argentino (ISTEA)',
+    years: 3,
+    technologies: '.NET, Javascript, Android, SQL Server',
+    GPA: 7.15
+  },
+
+  hobbies: {
+    computerGames: {
+      categories: 'RPG, Retro, Pixel Art, Sega Genesis, Nintendo, Roguelites',
+      favorites: 'League of Legends, Diablo 2, Pokémon, Sonic'
+    },
+    developing: 'Aprender cosas nuevas, experimentar, desarrollo de juegos',
+    sports: 'Taekwondo'
   }
 }
 
