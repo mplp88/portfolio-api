@@ -1,40 +1,51 @@
 const express = require('express')
+const crypto = require('crypto')
 const router = express.Router()
 const { init, receiveMessage } = require('./pusher')
 
 router.get('/', (req, res) => {
-  try {
-    const chatId = crypto.randomUUID()
-    return res.json({
-      chatId
-    })
-  } catch (error) {
-    res.status(400).json({
-      error
-    })
-  }
+  const chatId = crypto.randomUUID()
+  return res.json({ chatId })
 })
 
-router.get('/init/:chatid', (req, res) => {
+router.get('/init/:chatid', async (req, res) => {
   const chatId = req.params.chatid
+
   try {
-    init(chatId)
-    return res.status(200).send({ chatId })
+    await init(chatId)
+
+    return res.status(200).json({ chatId })
   } catch (error) {
-    res.status(400).json({
-      error
+    console.error('[Chatbot] Error inicializando chat:', error)
+
+    return res.status(500).json({
+      error: 'No se pudo inicializar el chatbot.'
     })
   }
 })
 
-router.post('/sendMessage/:chatId', (req, res) => {
+router.post('/sendMessage/:chatId', async (req, res) => {
+  const chatId = req.params.chatId
+  const message = req.body.message
+
+  if (typeof message !== 'string' || !message.trim()) {
+    return res.status(400).json({
+      error: 'El mensaje es obligatorio.'
+    })
+  }
+
   try {
-    const chatId = req.params.chatId
-    const message = req.body.message
-    receiveMessage(chatId, message)
-    return res.status(200).send()
+    await receiveMessage(chatId, message)
+
+    return res.status(200).json({
+      success: true
+    })
   } catch (error) {
-    res.status(400).send(error)
+    console.error('[Chatbot] Error procesando mensaje:', error)
+
+    return res.status(500).json({
+      error: 'No se pudo procesar el mensaje.'
+    })
   }
 })
 

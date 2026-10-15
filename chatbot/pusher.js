@@ -14,14 +14,17 @@ const pusher = new Pusher({
   useTLS: true
 })
 
-const init = (chatId) => {
-  pusher.trigger('ponbot', 'init', {
+const init = async (chatId) => {
+  const response = await pusher.trigger('ponbot', 'init', {
     chatId,
     message: {
       sender: 'PonBot',
       text: 'Hola, soy PonBot el ChatBot de Martín! ¿En qué te puedo ayudar?'
     }
   })
+
+  console.log('[Pusher] Evento init publicado:', response)
+  return response
 }
 
 const receiveMessage = async (chatId, text) => {
