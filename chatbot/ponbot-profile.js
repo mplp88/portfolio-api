@@ -1,7 +1,11 @@
 const profile = {
   name: 'Martín Ponce',
   title: 'Senior Full Stack Software Developer',
-  experience: 'Aproximadamente 10 años de experiencia en desarrollo de software',
+
+  professionalSummary: {
+    yearsOfExperience: 10,
+    description: 'Aproximadamente 10 años de experiencia en desarrollo de software.'
+  },
 
   summary: `
     Desarrollador de software con experiencia en desarrollo backend,
@@ -17,7 +21,7 @@ const profile = {
     tools: ['Git', 'Azure', 'Grafana']
   },
 
-  experience: [
+  workExperience: [
     {
       company: 'SHIFTA',
       role: 'Software Developer',
@@ -59,12 +63,51 @@ const profile = {
       name: 'Portfolio profesional',
       description: 'Portfolio personal y proyectos de desarrollo.',
       url: 'https://portfolio.martinponce.com.ar/#/projects'
+    },
+    {
+      name: 'Maternidad y Emociones',
+      description:
+        'Aplicación web full-stack desarrollada con Vue 3 y Node.js para un emprendimiento real, con gestión de contenidos, autenticación, carga de imágenes y MongoDB.',
+      technologies: 'Vue 3, Node.js, MongoDB, Pinia, JWT',
+      url: 'https://portfolio.martinponce.com.ar/#/projects/maternidad-y-emociones'
+    },
+    {
+      name: 'Secure Notes',
+      description:
+        'Proof of Concept enfocada en seguridad, arquitectura limpia y dockerización completa. Permite almacenar notas encriptadas y gestionar usuarios autenticados.',
+      technologies: '.NET, Next.js, TypeScript, SQL Server, Docker',
+      url: 'https://portfolio.martinponce.com.ar/#/projects/secure-notes'
+    },
+    {
+      name: 'Clean Users API',
+      description:
+        'API REST de usuarios desarrollada con .NET 8 y Clean Architecture, utilizando Entity Framework Core, SQL Server, DTOs, AutoMapper y Swagger.',
+      technologies: '.NET 8, C#, EF Core, SQL Server, Clean Architecture',
+      url: 'https://portfolio.martinponce.com.ar/#/projects/clean-users-api'
+    },
+    {
+      name: 'Professional Vue Landing Page',
+      description:
+        'Template de landing page moderno y responsive desarrollado con Vue 3, Vite y TailwindCSS, diseñado para portfolios, freelancers y sitios web empresariales.',
+      technologies: 'Vue 3, Vite, TailwindCSS, Pinia, Vue Router',
+      url: 'https://portfolio.martinponce.com.ar/#/projects/landing-page-template'
+    },
+    {
+      name: 'Free Games Notifier',
+      description:
+        'Sistema de monitoreo y notificaciones automáticas para juegos gratuitos en Epic Games Store y Steam. Disponible para Telegram y Discord.',
+      technologies: 'Node.js, SQLite, Discord, Telegram, Puppeteer',
+      url: 'https://portfolio.martinponce.com.ar/#/projects/free-games-notifier'
     }
   ],
 
+  ai: {
+    description: `Estoy actualmente aprendiendo la implementación de Inteligencia Artificial por cuenta propia. Eso incluye el Chatbot
+    del Portfolio, PonBot, así como también otros proyectos que estoy desarrollando para uso personal local.`
+  },
+
   contact: {
     email: 'martin@martinponce.com.ar',
-    portfolio: 'https://portfolio.martinponce.com.ar',
     projects: 'https://portfolio.martinponce.com.ar/#/projects',
     contactPage: 'https://portfolio.martinponce.com.ar/#/contact',
     linkedin: 'https://www.linkedin.com/in/mplp88/',
